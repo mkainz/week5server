@@ -14,5 +14,6 @@ app.get('/test.html', function (req, res) {
  // run some server-side code
 console.log('test.html requested');
 // note that __dirname gives the path to the server.js file
-res.sendFile(__dirname + '/test.html');
+res.sendFile('/home/studentuser/code/week5server' + '/test.html');
 });
+
