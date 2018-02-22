@@ -10,10 +10,11 @@ var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 httpsServer.listen(4443);
 
-app.get('/', function (req, res) {
+app.get('/:fileName', function (req, res) {
  // run some server-side code
-console.log('test.html requested');
-// note that __dirname gives the path to the server.js file
-res.sendFile(__dirname + '/test.html');
+	var fileName = req.params.fileName;
+	console.log('test.html requested');
+	// note that __dirname gives the path to the server.js file
+	res.sendFile(__dirname + '/' + fileName);
 });
 
